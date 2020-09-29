@@ -26,16 +26,10 @@ def roll(die_string, seed=None):
     if not match:
         raise ValueError(f"Invalid die string. {FORMAT_HELP}")
 
-    multiplier = match[MULTIPLIER_INDEX] or DEFAULT_MULTIPLIER
-    multiplier = int(multiplier)
-
+    multiplier = int(match[MULTIPLIER_INDEX] or DEFAULT_MULTIPLIER)
     die = int(match[DIE_INDEX])
+    modifier = int(match[MODIFIER_INDEX] or DEFAULT_MODIFIER)
 
-    modifier = match[MODIFIER_INDEX] or DEFAULT_MODIFIER
-    modifier = int(modifier)
-
-    result = reduce(
+    return reduce(
         lambda memo, value: memo + random.randrange(die), range(multiplier), 0
-    )
-
-    return result + modifier
+    ) + modifier
