@@ -24,71 +24,71 @@ def test_version():
 
 def test_d2():
     assert roller.roll("d2", BASE_SEED) == SEED_1_VALUES['d2'][0]
-
-
-def test_2d2():
+    assert roller.roll("1d2", BASE_SEED) == SEED_1_VALUES['d2'][0]
     assert roller.roll("2d2", BASE_SEED) == SEED_1_VALUES['d2'][0] + SEED_1_VALUES['d2'][1]
+    assert roller.roll("2d2+1", BASE_SEED) == SEED_1_VALUES['d2'][0] + SEED_1_VALUES['d2'][1] + 1
+    assert roller.roll("2d2-1", BASE_SEED) == SEED_1_VALUES['d2'][0] + SEED_1_VALUES['d2'][1] - 1
 
 
 def test_d3():
     assert roller.roll("d3", BASE_SEED) == SEED_1_VALUES['d3'][0]
-
-
-def test_2d3():
+    assert roller.roll("1d3", BASE_SEED) == SEED_1_VALUES['d3'][0]
     assert roller.roll("2d3", BASE_SEED) == SEED_1_VALUES['d3'][0] + SEED_1_VALUES['d3'][1]
+    assert roller.roll("2d3+1", BASE_SEED) == SEED_1_VALUES['d3'][0] + SEED_1_VALUES['d3'][1] + 1
+    assert roller.roll("2d3-1", BASE_SEED) == SEED_1_VALUES['d3'][0] + SEED_1_VALUES['d3'][1] - 1
 
 
 def test_d4():
     assert roller.roll("d4", BASE_SEED) == SEED_1_VALUES['d4'][0]
-
-
-def test_2d4():
+    assert roller.roll("1d4", BASE_SEED) == SEED_1_VALUES['d4'][0]
     assert roller.roll("2d4", BASE_SEED) == SEED_1_VALUES['d4'][0] + SEED_1_VALUES['d4'][1]
+    assert roller.roll("2d4+1", BASE_SEED) == SEED_1_VALUES['d4'][0] + SEED_1_VALUES['d4'][1] + 1
+    assert roller.roll("2d4-1", BASE_SEED) == SEED_1_VALUES['d4'][0] + SEED_1_VALUES['d4'][1] - 1
 
 
 def test_d6():
     assert roller.roll("d6", BASE_SEED) == SEED_1_VALUES['d6'][0]
-
-
-def test_2d6():
+    assert roller.roll("1d6", BASE_SEED) == SEED_1_VALUES['d6'][0]
     assert roller.roll("2d6", BASE_SEED) == SEED_1_VALUES['d6'][0] + SEED_1_VALUES['d6'][1]
+    assert roller.roll("2d6+1", BASE_SEED) == SEED_1_VALUES['d6'][0] + SEED_1_VALUES['d6'][1] + 1
+    assert roller.roll("2d6-1", BASE_SEED) == SEED_1_VALUES['d6'][0] + SEED_1_VALUES['d6'][1] - 1
 
 
 def test_d8():
     assert roller.roll("d8", BASE_SEED) == SEED_1_VALUES['d8'][0]
-
-
-def test_2d8():
+    assert roller.roll("1d8", BASE_SEED) == SEED_1_VALUES['d8'][0]
     assert roller.roll("2d8", BASE_SEED) == SEED_1_VALUES['d8'][0] + SEED_1_VALUES['d8'][1]
+    assert roller.roll("2d8+1", BASE_SEED) == SEED_1_VALUES['d8'][0] + SEED_1_VALUES['d8'][1] + 1
+    assert roller.roll("2d8-1", BASE_SEED) == SEED_1_VALUES['d8'][0] + SEED_1_VALUES['d8'][1] - 1
 
 
 def test_d10():
     assert roller.roll("d10", BASE_SEED) == SEED_1_VALUES['d10'][0]
-
-
-def test_2d10():
+    assert roller.roll("1d10", BASE_SEED) == SEED_1_VALUES['d10'][0]
     assert roller.roll("2d10", BASE_SEED) == SEED_1_VALUES['d10'][0] + SEED_1_VALUES['d10'][1]
+    assert roller.roll("2d10+1", BASE_SEED) == SEED_1_VALUES['d10'][0] + SEED_1_VALUES['d10'][1] + 1
+    assert roller.roll("2d10-1", BASE_SEED) == SEED_1_VALUES['d10'][0] + SEED_1_VALUES['d10'][1] - 1
 
 
 def test_d12():
     assert roller.roll("d12", BASE_SEED) == SEED_1_VALUES['d12'][0]
-
-
-def test_2d12():
+    assert roller.roll("1d12", BASE_SEED) == SEED_1_VALUES['d12'][0]
     assert roller.roll("2d12", BASE_SEED) == SEED_1_VALUES['d12'][0] + SEED_1_VALUES['d12'][1]
+    assert roller.roll("2d12+1", BASE_SEED) == SEED_1_VALUES['d12'][0] + SEED_1_VALUES['d12'][1] + 1
+    assert roller.roll("2d12-1", BASE_SEED) == SEED_1_VALUES['d12'][0] + SEED_1_VALUES['d12'][1] - 1
 
 
 def test_d20():
     assert roller.roll("d20", BASE_SEED) == SEED_1_VALUES['d20'][0]
-
-
-def test_2d20():
+    assert roller.roll("1d20", BASE_SEED) == SEED_1_VALUES['d20'][0]
     assert roller.roll("2d20", BASE_SEED) == SEED_1_VALUES['d20'][0] + SEED_1_VALUES['d20'][1]
+    assert roller.roll("2d20+1", BASE_SEED) == SEED_1_VALUES['d20'][0] + SEED_1_VALUES['d20'][1] + 1
+    assert roller.roll("2d20-1", BASE_SEED) == SEED_1_VALUES['d20'][0] + SEED_1_VALUES['d20'][1] - 1
 
 
 def test_d100():
     assert roller.roll("d100", BASE_SEED) == SEED_1_VALUES['d100'][0]
-
-
-def test_2d100():
+    assert roller.roll("1d100", BASE_SEED) == SEED_1_VALUES['d100'][0]
     assert roller.roll("2d100", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1]
+    assert roller.roll("2d100+1", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1] + 1
+    assert roller.roll("2d100-1", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1] - 1
