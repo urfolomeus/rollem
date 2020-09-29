@@ -11,6 +11,9 @@ MULTIPLIER_INDEX = 1
 DIE_INDEX = 2
 MODIFIER_INDEX = 3
 
+DEFAULT_MULTIPLIER = 1
+DEFAULT_MODIFIER = 0
+
 def roll(die_string, seed=None):
     # allows us to avoid randomness in tests, will be random as long as seed is
     # not set
@@ -18,12 +21,12 @@ def roll(die_string, seed=None):
 
     match = re.search(DICE_STRING_MATCHER, die_string)
 
-    multiplier = match[MULTIPLIER_INDEX] or 1
+    multiplier = match[MULTIPLIER_INDEX] or DEFAULT_MULTIPLIER
     multiplier = int(multiplier)
 
     die = int(match[DIE_INDEX])
 
-    modifier = match[MODIFIER_INDEX] or 0
+    modifier = match[MODIFIER_INDEX] or DEFAULT_MODIFIER
     modifier = int(modifier)
 
     result = reduce(
