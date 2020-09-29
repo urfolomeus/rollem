@@ -1,10 +1,13 @@
 import random
 import re
 
+from functools import reduce
+
 # needs to be a raw string in order to avoid deprecation warnings
 # https://stackoverflow.com/a/50504635
-DICE_STRING_MATCHER = r'(\d*)d(2|3|4|6|8|10|12|20|100)(\+|-)?(\d*)'
+DICE_STRING_MATCHER = r'(\d*)d(100|20|12|10|8|6|4|3|2)(\+|-)?(\d*)'
 
+MULTIPLIER_INDEX = 1
 DIE_INDEX = 2
 
 def roll(dice_string, seed=None):
@@ -14,6 +17,13 @@ def roll(dice_string, seed=None):
 
     match = re.search(DICE_STRING_MATCHER, dice_string)
 
+    multiplier = match[MULTIPLIER_INDEX] or 1
+    multiplier = int(multiplier)
+
     die = int(match[DIE_INDEX])
 
-    return random.randrange(die)
+    result = reduce(
+        lambda memo, value: memo + random.randrange(die), range(multiplier), 0
+    )
+
+    return result
