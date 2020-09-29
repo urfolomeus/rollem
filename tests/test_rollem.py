@@ -1,3 +1,4 @@
+import pytest
 from rollem import __version__, roller
 
 # Set the seed when using the random generator in tests to avoid randomness
@@ -92,3 +93,16 @@ def test_d100():
     assert roller.roll("2d100", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1]
     assert roller.roll("2d100+1", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1] + 1
     assert roller.roll("2d100-1", BASE_SEED) == SEED_1_VALUES['d100'][0] + SEED_1_VALUES['d100'][1] - 1
+
+
+def test_no_die_string():
+    with pytest.raises(TypeError) as err:
+        assert roller.roll()
+
+
+def test_invalid_die_string():
+    invalid_die_strings = ["", "bob", "2xd6", "1d6x5", "d6*5", "d", "d6+", "d6-", "d6-+", "d6--1", "d5", "2dd6"]
+    for die_string in invalid_die_strings:
+        with pytest.raises(ValueError) as err:
+            assert roller.roll(die_string)
+        assert(str(err.value)) == f"Invalid die string. {roller.FORMAT_HELP}"
