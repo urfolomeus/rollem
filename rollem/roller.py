@@ -11,12 +11,12 @@ MULTIPLIER_INDEX = 1
 DIE_INDEX = 2
 MODIFIER_INDEX = 3
 
-def roll(dice_string, seed=None):
+def roll(die_string, seed=None):
     # allows us to avoid randomness in tests, will be random as long as seed is
     # not set
     random.seed(seed)
 
-    match = re.search(DICE_STRING_MATCHER, dice_string)
+    match = re.search(DICE_STRING_MATCHER, die_string)
 
     multiplier = match[MULTIPLIER_INDEX] or 1
     multiplier = int(multiplier)
